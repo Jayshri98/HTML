@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+<style>
+	#u{
+		text-align: center;
+		background-color: black;
+		color: white;
+		font-size: 50px;
+	}
+	h1{
+		text-align: center;
+	}
+	div{
+		height: 100px;
+		width: 100%;
+	}
+</style>
+<script>
+	function myfunction(w)
+	{
+		var gradient;
+		if(w==0)
+		{
+			gradient= "linear-gradient(to right, #660066 0%, #0099ff 100%)";
+		}
+		else
+		{
+			gradient= " linear-gradient(to left, #660066 0%, #0099ff 100%)";
+		}
+		document.getElementById("u").style.background = gradient;    
+	}
+</script>
+</head>
+<body>
+	<h1>Javascript</h1>
+	<p id="u">To set button in Java Script</p>
+	<div id="Gr"></div>
+	<h1>
+		<button type="button" onclick="myfunction(0)"> 	<table>To right</table></button>
+		<button type="button" onclick="myfunction(1)"> To left</button>
+	</h1>
+</body>
+</html>

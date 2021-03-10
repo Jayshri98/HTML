@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS</title>
+	<style>
+		p{
+			background-color: pink;
+			text-align: center;
+		}
+		h1
+		{
+			background-color: #79C8A1;
+			font-size: 40px;
+		}
+	</style>
+	<script>
+		function day(s){
+			var ni;
+			if (s == 0) 
+			{
+   			 ni = "day.jpg";
+  			} 
+  			else 
+  			{
+   			 ni = "night.jpg";
+  			}
+  document.getElementById('DN').src = ni;
+		}
+	</script>
+</head>
+<body>
+	<strong><center><h1>DAY AND NIGHT</h1></center></strong>
+	<b><p id="DN1">JAVASCRIPT</p></b>
+	<img id="DN" src="day.jpg" width="100%" height="100%">
+	<p>
+		<button type="button" onclick="day(1)">Day</button>
+		<button type="button" onclick="day(0)">Night</button>
+	</p>
+<body>
+</html>
