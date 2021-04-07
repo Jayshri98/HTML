@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+<style>
+	*{
+		box-sizing: border-box;
+	}
+	
+	h1{
+		font-style: Verdana;
+		background-color: #ccccff;
+		text-align: center;
+		padding: 30px
+	}
+	p
+	{
+		font-size: 20px;
+		font-style: verdana;
+		color: #007399;
+	}
+	#req
+	{
+		color: red;
+	}
+	form
+	{
+		padding: 50px
+	}
+	/*div
+	{
+		font-size: 20px;
+	}
+	footer
+	{
+		padding: 30px;
+		background-color: #ccccff;
+		text-align: center;
+	}*/
+	nav{
+		float: left;
+		width: 50%;
+		height: 500px;
+		padding: 20px;
+	}
+	article{
+		float: left;
+		width: 50%;
+		height: 500px;
+		padding: 20px;
+	}
+	#sub
+	{
+	margin: 0;
+  	position: relative;
+ 	top: 80%;
+  	left: 20%;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<h1>REGISTRATION</h1>
+	</header>
+	
+	<form action="https://www.w3schools.com/colors/colors_picker.asp">
+
+		<nav>
+			<b><p>First Name: </p></b>
+			<input type="text" name="name1" id="Fname" size="50">
+
+			<b><p>Address:</p></b>
+			<textarea name="add" id="address"></textarea>
+
+			<b><p>ZIP code: </p></b>
+			<input type="text" name="zip" id="code" size="50">
+
+			<b><p>Phone Number: </p></b>
+			<input type="text" name="pn" id="Phone" size="50">
+
+			<b><p>Password</p></b>
+			<input type="password" name="pass" id="password" size="50"><br><br>
+
+			<b><p>E-mail ID:</p></b>
+			<input type="text" name="email" id="add" size="50">
+
+		</nav>
+		<article>
+			<b><p>Last Name: </p></b>
+			<input type="text" name="name2" id="Lname" size="50"><br>
+
+			<b><p>Country: </p></b>
+			<input type="text" name="country" id="cuntry" size="50">
+
+			<b><p>Gender: </p></b>
+			<input type="radio" id="male" name="gender" value="male">Male<br>
+			<input type="radio" id="female" name="gender" value="female">Female<br>
+			<input type="radio" id="other" name="gender" value="other">Other<br>
+				
+			<b><p>ID proofs Available: </p></b>
+			<input type="checkbox" id="aadhar" name="proof" value="adh">Aadhar<br>
+			<input type="checkbox" id="pass" name="passport" value="port">Passport<br>
+			<input type="checkbox" id="Licence" name="dri" value="DL">Driving Licence<br>
+
+			<b><p>Verify Password</p></b>
+			<input type="password" name="pass2" id="word" size="50"><br>
+
+		</article>
+
+		<center><input type="submit" name="submit" id="sub" size="50" ></center><br><br>
+	</form>
+</body>
+</html>

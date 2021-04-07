@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Create Account</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<style>
+	 *{
+		box-sizing: border-box;
+	}
+	body{
+		font-family: Arial;
+	}
+	form{
+		padding: 10px;
+		background-color: #E7F3F5;
+		/*border-style: solid;
+  		border-width: 5px;
+  		line-height: normal;*/
+	}
+	h1{
+		text-align: center;
+		font-size: 50px;
+	}
+	header{
+		padding: 10px;
+		background-color:  #D2DDDE ;
+	}
+	label{
+		color: #00b33c;
+		font-size: 20px;
+	}
+
+	input[type="range"]{
+
+		width:200px;
+	}
+	input[type="email"]{
+		width:800px;
+	}
+	address
+	{
+		width: 100%;
+		height: 100%;
+	}
+	footer{
+		padding: 10px;
+		width: 100%;
+		height: 100px;
+		background-color: #D2DDDE ;
+	}
+	/*#sub{
+		background-color: #00b33c;
+		color: white;
+		font-size:2em;
+	}*/
+	.button{
+		background-color: #00b33c;
+		font-size: 2em;
+		color: white;
+		border-radius: 8px;
+	}
+	.butto button:hover {
+  background-color: #39E0EF;
+	}
+	.butto button:active
+	{
+		background-color: #FFC300 ;
+	}
+	.center
+	{
+	  margin: auto;
+	  width: 60%;
+	  padding: 10px;
+	  line-height: normal;
+	}
+	
+	.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 100px; 
+  margin: auto;
+}
+
+/* Clear floats after the columns */
+.row:after
+ 	{
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+
+#message /*Strong password css*/
+	{
+	  display:none;
+	  background: #f1f1f1;
+	  color: #000;
+	  position: relative;
+	  padding: 20px;
+	  margin-top: 10px;
+	}
+
+	#message p {
+	  padding: 10px 35px;
+	  font-size: 18px;
+	}
+	.valid 
+	{
+  	color: green;
+	}
+
+	.valid:before 
+	{
+	  position: relative;
+	  left: -35px;
+	  content: "*";
+	}
+	.invalid 
+	{
+  		color: red;
+	}
+
+	.invalid:before 
+	{
+	  position: relative;
+	  left: -35px;
+	  content: "x";
+	}
+	.eye
+	{
+		float: right;
+		margin-top: -40px;
+		position: relative;
+		z-index: 9;
+		cursor:pointer;
+
+	}
+	
+	#hide1{
+		display: none;
+	}
+	
+</style>
+<script>	
+	function validateForm()			/*validation */
+	{
+		document.getElementById('firs').innerHTML="";
+		var fname = document.forms["myForm"]["first"].value;
+		document.getElementById('las').innerHTML="";		/*first name variable declaration*/
+		var lname = document.getElementById("last").value;			/*last name variable declaration*/
+
+		document.getElementById('').innerHTML="";
+		var x=document.myForm.email.value;  
+		var atposition=x.indexOf("@");  							/*email variable declaration*/
+		var dotposition=x.lastIndexOf(".");  
+		 
+		var pw1 = document.getElementById("passwod").value;			
+		var pw2 = document.getElementById("pass").value;
+		var state = false;
+
+			var myInput = document.getElementById("passwod");		/*password variable declaration*/
+			var letter = document.getElementById("letter");
+			var capital = document.getElementById("capital");
+			var number = document.getElementById("number");
+			var length = document.getElementById("length");
+			var lowerCaseLetters = /[a-z]/g;
+			var upperCaseLetters = /[A-Z]/g;
+			var numbers = /[0-9]/g;
+
+		var gen1 = document.getElementById("female").checked;
+		var gen2 = document.getElementById("male").checked;			/*gender variable declaration*/
+		var hob = document.getElementById("hobbies").checked;
+		var hob1 = document.getElementById("hobbies1").checked;
+		var hob2 = document.getElementById("hobbies2").checked;		/*hobbie variable declaration*/
+		var hob3 = document.getElementById("hobbies3").checked;	 
+		var b_io=document.getElementById('biodata').value;
+		document.getElementById('er2').innerHTML="";
+		document.getElementById('er3').innerHTML="";
+		document.getElementById('er4').innerHTML="";
+		var allowedExtensions =/(\.jpg|\.jpeg|\.png|\.gif)$/i; 
+		var fileInput = document.getElementById('file'); 
+        var filePath = fileInput.value;
+        var a_ge=document.getElementById('num').value;
+				
+	 /*alert(pw1+" ==== "+pw2);*/
+			if (fname=="")	/*firstname Validation*/
+			{
+				document.getElementById("firs").innerHTML="First name must Entered";
+				return false;
+			}
+			if (lname=="") 
+			{
+				document.getElementById("las").innerHTML="Last Name Must be entered";
+				return false;
+			}
+			if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length)
+			{  
+  				alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  				return false;  
+ 			} 
+			
+			if (pw1 == "")
+			{
+				document.getElementById("mes").innerHTML="Please enter the password";	
+				return false;
+			}
+			if (pw1.length<5 )
+			{
+				document.getElementById("mes").innerHTML="Password length must be greater than 5 characters";	
+				return false;
+			}
+			if(pw1.length>25)
+			{
+				document.getElementById("mes").innerHTML="Password length Should be less than 25 characters";
+			}
+			if (pw1!=pw2) 
+			{
+				document.getElementById("mess").innerHTML="Password are not same";
+				return false;
+			}
+			if ((gen1 == "") && (gen2 =="")) 
+			{
+				document.getElementById("err").innerHTML = "Select a gender";
+			}
+			if ((hob == "") && (hob1 == "")&& (hob2 == "") && (hob3 == "")) 
+			{
+				document.getElementById("er1").innerHTML="Select one hobby";
+				return false;
+			}	
+			if(document.getElementById('Income').value=="")
+			{
+				document.getElementById('er2').innerHTML="Select your source of income";
+				return false;
+			}
+			 
+			if (document.getElementById("file").value == "") 
+			{
+				document.getElementById('er4').innerHTML="Please upload your file";
+				return false;
+			}
+			if (!allowedExtensions.exec(filePath)) 
+			{
+				document.getElementById('er4').innerHTML="Please upload correctextension ";
+				return false;
+			}
+			if(a_ge=="")
+			{
+
+				document.getElementById('er5').innerHTML="Enter your age";
+				return false;
+			}
+			if((isNaN(a_ge)))
+			{
+
+				document.getElementById('er5').innerHTML="Enter age in number";
+				return false;
+			}
+			 if(b_io=="")
+			{
+				document.getElementById('er6').innerHTML="Please enter your bio";
+				return false;
+			}
+			 if ((b_io.length < 20) || (b_io.length > 100))
+			{
+				document.getElementById('er6').innerHTML="Length is too short or too long";
+				return false;
+			}
+	}
+
+
+
+</script>
+
+</head>
+<body>
+	<div class="center">
+		<form action="file:///C:/xampp/htdocs/HTML/HTML/biodata.html" name="myForm" method="post">
+			
+			<header><h1>Create Account</h1></header>
+
+
+					<div class="row">
+						<div class="column">
+							<br><label><b>First Name* </b></label>
+							<input type="text" name="fn" id="first" size="50" placeholder="enter your first name" style="width: 400px; height: 35px;">
+							<p id="firs" style="color: red; font-family: verdana; font-size: 10px;"></p>
+						</div>
+						<div class="column">
+							<br><label><b>Last Name*</b></label>
+							<input type="text" name="ln" id="last" size="50" placeholder="enter your last name" style="width: 400px; height: 35px;">
+							<p id="las" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column">
+						<label><b>Email*</b></label>	<!--added email inputtype -->
+						<input type="email" name="email" id="mail" size="50" placeholder="enter your email" style="width: 830 px; height: 35px;">
+						</div>
+					</div>
+
+					<div class="row">
+					<div class="column">
+						<label><b>Password*</b></label> <!--added password-->
+						<input type="password" name="password" id="passwod" size="50" placeholder="enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="width: 400px; height: 35px;">
+						<p id="mes" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+						<span class="eye" onclick="myFunction()">
+						<i id="hide1" class="fa fa-eye"></i>
+						<i id="hide2" class="fa fa-eye-slash"></i> 
+						</span>
+					</div>
+					
+					<div class="column">
+						<label><b>Confirm Password*</b></label>
+						<input type="password" id="pass" name="pass" size="50" placeholder="enter your password again" style="width: 400px; height: 35px;">
+						<p id="mess" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+					</div>
+
+					<div class="row">
+					<div class="column">
+						<label><b>Gender*</b></label><br>	<!--gender-->
+						<input type="radio" id="female" name="gender" value="Female">Female
+						<input type="radio" id="male" name="gender" value="male"> Male
+						<p id="err" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+					</div>
+					<div class="column">
+						<label><b>Hobbies</b></label><br>
+						<input type="checkbox" id="hobbies" name="hobbie" value="Music">Music
+						<input type="checkbox" id="hobbies1" name="hobbie" value="Sports">Sports
+						<input type="checkbox" id="hobbies2" name="hobbie" value="Travel">Travel
+						<input type="checkbox" id="hobbies3" name="hobbie" value="Movies">Movies
+						<p id="er1" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+					</div>
+					</div>
+
+					<div class="row">
+					<div class="column">
+						<label><b>Source of Income*</b></label><br>	<!--source-->
+						<select id="Income" name="source" style="width: 390px; height: 25px;">
+							<option value="Sele">--Select--</option>
+							<option value="Employed">Self-Employed</option>
+							<option value="wages">Wages and Salaries</option>
+							<option value="gov">Government</option>
+						</select>
+						<p id="er2" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+					</div>
+					<div class="column">
+						<label><b>Income</b></label>	<br>		<!--added range-->
+						<input type="range" id="income" name="in" min="10000" max="50000" style="width: 350px;" >
+						<label for="income" style="background-color: #00b33c; color: white">20k</label>
+						<p id="er3" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+					</div>
+					</div>
+
+					<div class="row">
+					<div class="column">
+						<label><b>Upload Profile Picture*</b></label><br>	<!--uploaded picture-->
+						<input type="file" id="file" name="myfile" accept="image/x-png,image/gif,image/jpeg">
+						<p id="er4" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+					</div>
+					<div class="column">
+						<label><b>Age</b></label><br>
+						<input type="number" name="age" id="num" placeholder="[18-50]" style="height: 35px; width: 400px;">
+						<p id="er5" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+					</div>
+					</div>
+
+				<div>
+					<label><b>Bio</b></label><br>
+					<textarea name="bio" id="biodata" rows="5" cols="115"></textarea>
+					<p id="er6" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+
+				</div>
+
+				<footer>
+					<div class="butto">
+					<p style="text-align: right;"> <button type="submit" name="button" class="button" onclick="return validateForm()">Create</button> 
+					</div>
+				
+		</form>
+	</div>			
+	<div id="message">				<!--Strong password codin -->
+		<h3>Password must contain the following:</h3>
+		<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+		<p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+		<p id="number" class="invalid">A <b>number</b></p>
+		<p id="length" class="invalid">Minimum <b>8 characters</b></p>
+	</div>
+
+<script>
+	var myInput = document.getElementById("passwod");
+	var letter = document.getElementById("letter");				/*strong password conditions variable declaration*/
+	var capital = document.getElementById("capital");
+	var number = document.getElementById("number");
+	var length = document.getElementById("length");
+
+	myInput.onfocus = function() 
+	{
+  		document.getElementById("message").style.display = "block";
+	}
+
+	myInput.onblur = function()
+	{
+  		document.getElementById("message").style.display = "none";
+	}
+
+	myInput.onkeyup = function()
+	{
+    	var lowerCaseLetters = /[a-z]/g;
+  		if(myInput.value.match(lowerCaseLetters))
+  			{  
+			    letter.classList.remove("invalid");
+			    letter.classList.add("valid");
+  			} 
+  		else
+  			{
+			    letter.classList.remove("valid");
+			    letter.classList.add("invalid");
+  			}
+  
+	  var upperCaseLetters = /[A-Z]/g;
+	  if(myInput.value.match(upperCaseLetters))
+	  	{  
+	    	capital.classList.remove("invalid");
+	    	capital.classList.add("valid");
+	  	}
+	  	else
+	  		{
+			    capital.classList.remove("valid");
+			    capital.classList.add("invalid");
+	  		}
+
+	  var numbers = /[0-9]/g;
+	  if(myInput.value.match(numbers)) 
+	  {  
+	    number.classList.remove("invalid");
+	    number.classList.add("valid");
+	  } 
+	  else
+	  	{
+		    number.classList.remove("valid");
+		    number.classList.add("invalid");
+	  	}
+	  
+	  if(myInput.value.length >= 8) 
+	  	{
+		    length.classList.remove("invalid");
+		    length.classList.add("valid");
+	  	} 
+	  	else
+	  		 {
+			    length.classList.remove("valid");
+			    length.classList.add("invalid");
+	  		}
+}
+</script>
+<script>
+	function myFunction()
+	{
+		var r = document.getElementById("passwod");
+		var s = document.getElementById("hide1");
+		var t = document.getElementById("hide2");		/*hide and show password variable declaration*/
+
+		if (r.type === 'password') {
+			r.type = "text";
+			s.style.display = "block";
+			t.style.display = "none";
+		}
+		else{
+			r.type = "password";
+			s.style.display = "none";
+			t.style.display = "block";
+		}
+
+	}
+</script>
+
+</body>
+</html>
