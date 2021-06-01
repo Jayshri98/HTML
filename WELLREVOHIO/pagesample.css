@@ -1,3 +1,22 @@
+		.navbar
+		{
+			width: 100%;
+			padding-left: 8%;
+			padding-right: 8%;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		nav
+		{
+			flex: 1;
+			text-align: right;
+		}
+		nav ul li
+		{
+			list-style: none;
+			display: inline-flex;
+			margin-right: 10px;
+		}
 	#logo
 		{
 			margin-left: 100px;
@@ -57,12 +76,14 @@
 		#img1
 		{
 			margin-top: 20px;
-			width: 50%;
-			height: 50%;
+			width: 45%;
+			height: 30%;
 		}
 		.container 
 		{
 			padding-top: 30px;
+			padding-left: 100px;
+			padding-right: 120px
 		}
 
 		.foot
@@ -111,5 +132,21 @@
       .bottom
       {
       	background-color: #64676b;
-      	padding: 50px;
+      	padding: 20px;
       }
+      	/*@media only screen and (max-width: 50px){
+      	nav ul{
+      		width: 100%;
+      		position: absolute;
+      		top: 75px;
+      		right: 0;
+      		z-index: 2;
+      	}
+      	nav ul li
+      	{
+      		display: block;
+      		margin-top: 10px;
+      		margin-bottom: 10px;
+      	}
+
+      }*/

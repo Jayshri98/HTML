@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample</title>
+<style>
+	h1{
+		font-style: verdana;
+		text-align: center;
+		font-size: 50px;
+ 		background-color: lightgreen;
+	}
+	p {
+  		text-align: center;
+  		font-size: 20px;
+	}
+	img{
+		text-align: center;
+
+	}
+	button
+	{
+		text-align: center;
+		font-size: 20px;
+		margin-left: 150px;
+		margin-right: 150px;
+	}
+	.container { 
+  height: 200px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.containers { 
+  height: 200px;
+  position: relative;
+}
+
+.centers {
+  margin: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+<script>
+function online() {
+  var str = "click here to login";
+  var result = str.link("file:///C:/xampp/htdocs/HTML/HTML/login.html");
+  document.getElementById("sample").innerHTML = result;
+}
+function shopping() {
+  var str = "click here to Registration";
+  var result = str.link("file:///C:/xampp/htdocs/HTML/HTML/reg.html#");
+  document.getElementById("sample").innerHTML = result;
+} 
+</script>
+</head>
+<body>
+	<h1>AMAZON</h1>
+	<center><img src="C:\xampp\htdocs\HTML\HTML\download.jpg" width="20%" height="20%"></center>
+	<p>Happiness is not in making money, but in shopping</p>
+	<div class="container">
+		<div class="center">
+	<button onclick="online()" >Login</button>
+	<div class="containers">
+		<div class="centers">
+	<button onclick="shopping()">New Registration</button>
+	<p id="sample"></p>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Create Account</title>
+	<!--<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<style>
+	 *{
+		box-sizing: border-box;
+	}
+	body{
+		font-family: Arial;
+	}
+	form{
+		padding: 10px;
+		background-color: #E7F3F5;
+		/*border-style: solid;
+  		border-width: 5px;
+  		line-height: normal;*/
+	}
+	h1{
+		text-align: center;
+		font-size: 50px;
+	}
+	header{
+		padding: 10px;
+		background-color:  #D2DDDE ;
+	}
+	label{
+		color: #00b33c;
+		font-size: 20px;
+	}
+
+	input[type="range"]{
+
+		width:200px;
+	}
+	input[type="email"]{
+		width:800px;
+	}
+	address
+	{
+		width: 100%;
+		height: 100%;
+	}
+	footer{
+		padding: 10px;
+		width: 100%;
+		height: 100px;
+		background-color: #D2DDDE ;
+	}
+	/*#sub{
+		background-color: #00b33c;
+		color: white;
+		font-size:2em;
+	}*/
+	.button{
+		background-color: #00b33c;
+		font-size: 2em;
+		color: white;
+		border-radius: 8px;
+	}
+	.butto button:hover {
+  background-color: #39E0EF;
+	}
+	.butto button:active
+	{
+		background-color: #FFC300 ;
+	}
+	.center
+	{
+	  margin: auto;
+	  width: 60%;
+	  padding: 10px;
+	  line-height: normal;
+	}
+	
+	.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 100px; 
+  margin: auto;/* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after
+ 	{
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+
+#message /*Strong password css*/
+	{
+	  display:none;
+	  background: #f1f1f1;
+	  color: #000;
+	  position: relative;
+	  padding: 20px;
+	  margin-top: 10px;
+	}
+
+	#message p {
+	  padding: 10px 35px;
+	  font-size: 18px;
+	}
+	.valid 
+	{
+  	color: green;
+	}
+
+	.valid:before 
+	{
+	  position: relative;
+	  left: -35px;
+	  content: "*";
+	}
+	.invalid 
+	{
+  		color: red;
+	}
+
+	.invalid:before 
+	{
+	  position: relative;
+	  left: -35px;
+	  content: "x";
+	}
+</style>
+<script>
+	function validateForm()
+	{
+		var fname = document.forms["myForm"]["first"].value;
+		var lname = document.getElementById("last").value;
+		var email = document.getElementById("mail").value;
+			var atposition = email.indexOf("@");
+			var dotposition = email.lastIndexOf(".");
+	var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+	//alert(pw1+" ==== "+pw2);
+			/*var myInput = document.getElementById("password");
+			var letter = document.getElementById("letter");
+			var capital = document.getElementById("capital");
+			var number = document.getElementById("number");
+			var length = document.getElementById("length");*/
+		/*var lowerCaseLetters = /[a-z]/g;
+		var upperCaseLetters = /[A-Z]/g;
+		var numbers = /[0-9]/g;*/
+		
+	 /*alert(pw1+" ==== "+pw2);*/
+			if (fname=="")
+			{
+				document.getElementById("firs").innerHTML="First name must Entered";
+				return false;
+			}
+			if (lname=="") 
+			{
+				document.getElementById("las").innerHTML="Last Name Must be entered";
+				return false;
+			}
+			/*if (atposition<1||dotposition<atposition+2||dotposition+2>=x.length) 
+			{
+				alert("PLEASE ENTER VALID E-MAIL ID \n atposition"+atposition+"\n dotposition:"+dotposition);
+				return false;
+			}*/
+			
+		if(inputtxt.value.match(passw)) 
+{ 
+alert('Correct')
+return true;
+}
+else
+{ 
+alert('Wrong...!')
+return false;
+}
+}
+			
+	}
+
+
+</script>
+
+</head>
+<body>
+	<div class="center">
+		<form action="\HTML" name="myForm" method="post">
+			
+			<header><h1>Create Account</h1></header>
+
+
+					<div class="row">
+						<div class="column">
+							<br><label><b>First Name* </b></label>
+							<input type="text" name="fn" id="first" size="50" placeholder="enter your first name" style="width: 400px; height: 35px;">
+							<p id="firs" style="color: red; font-family: verdana; font-size: 10px;"></p>
+						</div>
+						<div class="column">
+							<br><label><b>Last Name*</b></label>
+							<input type="text" name="ln" id="last" size="50" placeholder="enter your last name" style="width: 400px; height: 35px;">
+							<p id="las" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column">
+						<label><b>Email*</b></label>	<!--added email inputtype -->
+						<input type="email" name="email" id="mail" size="50" placeholder="enter your email" style="width: 830px; height: 35px;">
+						</div>
+					</div>
+
+					<div class="row">
+					<div class="column">
+						<label><b>Password*</b></label> <!--added password-->
+						<input type="password" name="pa" id="password" size="50" placeholder="enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="width: 400px; height: 35px;">
+						<p id="para" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+					</div>
+					
+					<div class="column">
+						<label><b>Confirm Password*</b></label>
+						<input type="password" id="pass" name="pas" size="50" placeholder="enter your password again" style="width: 400px; height: 35px;">
+						<p id="mes"></p>
+					</div>
+
+					<div class="row">
+					<div class="column">
+						<label><b>Gender*</b></label><br>	<!--gender-->
+						<input type="radio" id="female" name="gender" value="Female">Female
+						<input type="radio" id="male" name="gender" value="male"> Male
+					<h4 id="error" style= "color:red"> </h4>
+					</div>
+					<div class="column">
+						<label><b>Hobbies</b></label><br>
+						<input type="checkbox" id="hobbies" name="hobbie" value="Music">Music
+						<input type="checkbox" id="hobbies1" name="hobbie1" value="Sports">Sports
+						<input type="checkbox" id="hobbies2" name="hobbie2" value="Travel">Travel
+						<input type="checkbox" id="hobbies3" name="hobbie3" value="Movies">Movies
+						<h3 id=""></h3>
+					</div>
+					</div>
+
+					<div class="row">
+					<div class="column">
+						<label><b>Source of Income*</b></label><br>	<!--source-->
+						<select id="Income" required name="source" style="width: 390px; height: 25px;">
+							<option value="Employed">Self-Employed</option>
+							<option value="wages">Wages and Salaries</option>
+							<option value="gov">Government</option>
+						</select>
+					</div>
+					<div class="column">
+						<label><b>Income</b></label>	<br>		<!--added range-->
+						<input type="range" id="income" name="in" min="10000" max="50000" style="width: 350px;"><label for="income" style="background-color: #00b33c; color: white">20k</label>
+					</div>
+					</div>
+
+					<div class="row">
+					<div class="column">
+						<label><b>Upload Profile Picture*</b></label><br>	<!--uploaded picture-->
+						<input type="file" id="file" name="myfile">
+					</div>
+					<div class="column">
+						<label><b>Age</b></label><br>
+						<input type="number" name="age" id="num" placeholder="[18-50]" style="height: 35px; width: 400px;">
+					</div>
+					</div>
+
+				<div>
+					<label><b>Bio</b></label><br>
+					<textarea name="bio" id="biodata" rows="5" cols="115"></textarea>
+				</div>
+
+				<footer>
+					<div class="butto">
+					<p style="text-align: right;"> <button type="submit" name="button" class="button" onclick="return validateForm()">Create</button> 
+					</div>
+		
+
+				
+		</form>
+	<!--</div>
+	<div id="message">				
+		<h3>Password must contain the following:</h3>
+		<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+		<p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+		<p id="number" class="invalid">A <b>number</b></p>
+		<p id="length" class="invalid">Minimum <b>8 characters</b></p>
+	</div>
+<script>
+	var myInput = document.getElementById("password");
+	var letter = document.getElementById("letter");
+	var capital = document.getElementById("capital");
+	var number = document.getElementById("number");
+	var length = document.getElementById("length");
+
+	myInput.onfocus = function() 
+	{
+  		document.getElementById("message").style.display = "block";
+	}
+
+	myInput.onblur = function()
+	{
+  		document.getElementById("message").style.display = "none";
+	}
+
+	myInput.onkeyup = function()
+	{
+    	var lowerCaseLetters = /[a-z]/g;
+  		if(myInput.value.match(lowerCaseLetters))
+  			{  
+			    letter.classList.remove("invalid");
+			    letter.classList.add("valid");
+  			} 
+  		else
+  			{
+			    letter.classList.remove("valid");
+			    letter.classList.add("invalid");
+  			}
+  
+	  var upperCaseLetters = /[A-Z]/g;
+	  if(myInput.value.match(upperCaseLetters))
+	  	{  
+	    	capital.classList.remove("invalid");
+	    	capital.classList.add("valid");
+	  	}
+	  	else
+	  		{
+			    capital.classList.remove("valid");
+			    capital.classList.add("invalid");
+	  		}
+
+	  var numbers = /[0-9]/g;
+	  if(myInput.value.match(numbers)) 
+	  {  
+	    number.classList.remove("invalid");
+	    number.classList.add("valid");
+	  } 
+	  else
+	  	{
+		    number.classList.remove("valid");
+		    number.classList.add("invalid");
+	  	}
+	  
+	  if(myInput.value.length >= 8) 
+	  	{
+		    length.classList.remove("invalid");
+		    length.classList.add("valid");
+	  	} 
+	  	else
+	  		 {
+			    length.classList.remove("valid");
+			    length.classList.add("invalid");
+	  		}
+}
+</script>-->
+
+</body>
+</html>

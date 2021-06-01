@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>check</title>
+	<script type="text/javascript">
+		function aform()
+		{
+		
+		var hobb = document.querySelector('input[name="hobbie"]:checked');
+		
+		
+		if(hobb==null)
+			{
+				document.getElementById('er1').innerHTML="Select your Hobbies";
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="file:///C:/xampp/htdocs/HTML/HTML/biodata.html" name="myForm" method="post">
+	<div class="column">
+						<label><b>Hobbies</b></label><br>
+						<input type="checkbox" id="hobbies" name="hobbie" value="Music">Music
+						<input type="checkbox" id="hobbies1" name="hobbie" value="Sports">Sports
+						<input type="checkbox" id="hobbies2" name="hobbie" value="Travel">Travel
+						<input type="checkbox" id="hobbies3" name="hobbie" value="Movies">Movies
+						<p id="er1" style="color: red; font-family: Verdana; font-size: 10px;"></p>
+					</div>
+					<button type="submit" name="button" class="button" onclick="return aform()">Create</button> 
+					</div>
+				
+		</form>
+</body>
+</html>
